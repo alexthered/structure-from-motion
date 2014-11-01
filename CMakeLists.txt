@@ -9,6 +9,9 @@ cmake_minimum_required( VERSION 2.8 )
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_DIRS})
 
+#Boost
+find_package(Boost REQUIRED)
+include_directories(${Boost_INCLUDE_DIRS})
 #PCL
 find_package(PCL REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
@@ -50,4 +53,4 @@ set( EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE} )
 
 add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
 
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${PCL_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${Boost_LIBRARIES} ${PCL_LIBRARIES})
