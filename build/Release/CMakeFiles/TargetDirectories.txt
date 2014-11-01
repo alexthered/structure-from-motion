@@ -1,0 +1,1 @@
+/home/doanvuhiep/battleField/MasteringOpenCV/structure-from-motion/build/Release/CMakeFiles/buildStructureFromMotion.dir
