@@ -9,9 +9,7 @@ cmake_minimum_required( VERSION 2.8 )
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_DIRS})
 
-#Boost
-find_package(Boost REQUIRED)
-include_directories(${Boost_INCLUDE_DIRS})
+
 #PCL
 find_package(PCL REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
