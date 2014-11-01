@@ -9,6 +9,11 @@ cmake_minimum_required( VERSION 2.8 )
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_DIRS})
 
+#Use QT4
+find_package(Qt4 REQUIRED)
+set( QT_USE_GUI FALSE )  #dont use GUI yet
+include(${QT_USE_FILE})
+add_definitions(${QT_DEFINITIONS})
 
 #PCL
 find_package(PCL REQUIRED)
@@ -49,6 +54,6 @@ endif()
 # Create output folder with build type (release/debug)
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE} )
 
-add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
+add_executable(${PROJECT_NAME} main.cpp)
 
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${Boost_LIBRARIES} ${PCL_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${QT_LIBRARIES} ${PCL_LIBRARIES})
