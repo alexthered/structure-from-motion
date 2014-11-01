@@ -54,6 +54,6 @@ endif()
 # Create output folder with build type (release/debug)
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE} )
 
-add_executable(${PROJECT_NAME} main.cpp)
+add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
 
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${QT_LIBRARIES} ${PCL_LIBRARIES})
