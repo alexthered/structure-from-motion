@@ -20,7 +20,9 @@ int main(int argc, char* argv[])
     if(!img_loader.AddInputFromDir(argv[1])){
         return 0;
     }
+#ifdef SHOW_INTER_RESULT
     img_loader.ShowInputImg();
+#endif
 
     return 1;
 }
