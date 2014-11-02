@@ -23,6 +23,7 @@ int ImgLoader::AddInputFromDir(const string path_to_dir)
                           QDir::AllDirs|QDir::Files|QDir::NoSymLinks,
                           QDirIterator::Subdirectories
                           );
+
     while(dir_iter.hasNext())
     {
         dir_iter.next();
@@ -32,8 +33,8 @@ int ImgLoader::AddInputFromDir(const string path_to_dir)
             dir_iter.fileInfo().completeSuffix().contains("jpeg", Qt::CaseInsensitive) ||
             dir_iter.fileInfo().completeSuffix().contains("png", Qt::CaseInsensitive)
                 ){
-            // assign current file name to current_file
-            QString current_file = dir_iter.fileInfo().absoluteFilePath();
+            // get the current file's RELATIVE file path
+            QString current_file = dir_iter.fileInfo().filePath();
 
             //add image file whose name is current_file
             if(!AddInput(current_file.toStdString()))
