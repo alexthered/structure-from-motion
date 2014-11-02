@@ -76,9 +76,10 @@ void ImgLoader::ClearInput()
 void ImgLoader::ShowInputImg()
 {
     cout << "[Image Loader] Showing image....";
+    namedWindow("Input image", CV_WINDOW_NORMAL || CV_WINDOW_KEEPRATIO || CV_GUI_EXPANDED);
     vector<Mat>::iterator iter = img_input.begin();
     while(iter!=img_input.end()){
-        imshow("Input", (*iter));
+        imshow("Input image", (*iter));
         waitKey(0);
         iter++;
     }
