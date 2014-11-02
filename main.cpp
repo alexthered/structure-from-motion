@@ -11,7 +11,7 @@ void PrintUsage()
 int main(int argc, char* argv[])
 {
 
-    if (argc == 0){
+    if (argc < 2){
         PrintUsage();
         return 0;
     }
@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
     if(!img_loader.AddInputFromDir(argv[1])){
         return 0;
     }
+    img_loader.ShowInputImg();
 
     return 1;
 }
