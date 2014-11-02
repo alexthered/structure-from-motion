@@ -18,6 +18,10 @@ public:
     virtual void MatchFeatures(int idx_i, int idx_j, std::vector<cv::DMatch>* matches)= 0;
 
 protected:
+    //helper functions to convert between Key points and Points
+    void KeyPointsToPoints(const std::vector<cv::KeyPoint>& kps, std::vector<cv::Point2f>& ps);
+    void PointsToKeyPoints(const std::vector<cv::Point2f>& ps, std::vector<cv::KeyPoint>& kps);
+
     bool use_gpu;
     //set of images to find matching features
     std::vector<cv::Mat>& img_input;
