@@ -29,9 +29,11 @@ public:
 
     cv::vector<cv::Mat>& get_input_img(){ return img_input; }
     int get_num_input() const { return img_input.size(); }
+    cv::Size get_img_size() const {return img_size;}
 
 private:
     std::vector<cv::Mat> img_input;
+    cv::Size img_size;
 };
 
 #endif // IMGLOADER_H

@@ -8,7 +8,8 @@ using namespace cv;
 
 
 //ctor
-ImgLoader::ImgLoader()
+ImgLoader::ImgLoader():
+    img_size(0,0)
 {
 }
 
@@ -56,6 +57,10 @@ int ImgLoader::AddInput(const string path_to_file)
 
     //push the loaded image and increment the num_input
     img_input.push_back(cur_img.clone());
+
+    //update image's size if needed
+    if(img_size.width==0 || img_size.height == 0)
+        img_size = cur_img.size();
 
     return 1;
 }
