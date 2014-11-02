@@ -5,6 +5,11 @@
 project(buildStructureFromMotion)
 cmake_minimum_required( VERSION 2.8 )
 
+#
+# Project options
+#
+option( BSFM_DEBUG_MODE "Debugging mode" ON )
+
 #OpenCV
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_DIRS})
@@ -49,6 +54,12 @@ add_definitions( -O3 )
 elseif( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 # add_definitions( -DQT_DEBUG )
 add_definitions( -DIPCAM_DEBUG )
+endif()
+
+# show intermediate results or not
+if( BSFM_DEBUG_MODE)
+message(STATUS "Built in debugging mode")
+add_definitions(-DSHOW_INTER_RESULT)
 endif()
 
 # Create output folder with build type (release/debug)
