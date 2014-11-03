@@ -56,10 +56,10 @@ elseif( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 add_definitions( -DIPCAM_DEBUG )
 endif()
 
-# show intermediate results or not
 if( BSFM_DEBUG_MODE)
 message(STATUS "Built in debugging mode")
-add_definitions(-DSHOW_INTER_RESULT)
+add_definitions(-DSHOW_INTER_RESULT)   #show intermediate result
+add_definitions(-DCV_PROFILE)          #show execution time
 endif()
 
 # Create output folder with build type (release/debug)
