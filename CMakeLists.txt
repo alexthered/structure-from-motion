@@ -59,7 +59,7 @@ endif()
 if( BSFM_DEBUG_MODE)
 message(STATUS "Built in debugging mode")
 add_definitions(-DSHOW_INTER_RESULT)   #show intermediate result
-add_definitions(-DCV_PROFILE)          #show execution time
+add_definitions(-DSHOW_PROFILING)          #show execution time
 endif()
 
 # Create output folder with build type (release/debug)
