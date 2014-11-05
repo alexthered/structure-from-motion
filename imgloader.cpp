@@ -75,7 +75,7 @@ void ImgLoader::ClearInput()
 //show all loaded data
 void ImgLoader::ShowInputImg()
 {
-    cout << "[Image Loader] Showing image....";
+    cout << "[Image Loader] Showing image...." << endl;
     //use Qt backend's enhanced GUI to avoid too big image
     namedWindow("Input image", CV_WINDOW_NORMAL || CV_WINDOW_KEEPRATIO || CV_GUI_EXPANDED);
     vector<Mat>::iterator iter = img_input.begin();
